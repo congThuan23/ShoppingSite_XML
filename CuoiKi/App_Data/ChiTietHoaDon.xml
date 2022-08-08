@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<ChiTietHoaDons>
+  <ChiTietHoaDon id="24" maHD="1" maSP="1" soLuong="10" giaBan="1000000" />
+  <ChiTietHoaDon id="25" maHD="1" maSP="2" soLuong="10" giaBan="1650000" />
+  <ChiTietHoaDon id="26" maHD="1" maSP="3" soLuong="2" giaBan="2000000" />
+  <ChiTietHoaDon id="27" maHD="1" maSP="4" soLuong="3" giaBan="1350000" />
+  <ChiTietHoaDon id="28" maHD="1" maSP="5" soLuong="5" giaBan="3410000" />
+  <ChiTietHoaDon id="29" maHD="2" maSP="1" soLuong="1" giaBan="1650000" />
+  <ChiTietHoaDon id="30" maHD="2" maSP="5" soLuong="3" giaBan="3410000" />
+  <ChiTietHoaDon id="31" maHD="3" maSP="7" soLuong="2" giaBan="2499000" />
+  <ChiTietHoaDon id="32" maHD="4" maSP="6" soLuong="4" giaBan="1690000" />
+  <ChiTietHoaDon id="33" maHD="5" maSP="4" soLuong="1" giaBan="1432000" />
+  <ChiTietHoaDon id="34" maHD="5" maSP="2" soLuong="6" giaBan="2000000" />
+  <ChiTietHoaDon id="35" maHD="5" maSP="5" soLuong="3" giaBan="3410000" />
+  <ChiTietHoaDon id="36" maHD="6" maSP="3" soLuong="1" giaBan="1350000" />
+  <ChiTietHoaDon id="37" maHD="7" maSP="1" soLuong="2" giaBan="1650000" />
+  <ChiTietHoaDon id="38" maHD="8" maSP="1" soLuong="1" giaBan="1000000" />
+  <ChiTietHoaDon id="39" maHD="9" maSP="2" soLuong="1" giaBan="2000000" />
+  <ChiTietHoaDon id="40" maHD="9" maSP="7" soLuong="3" giaBan="2499000" />
+  <ChiTietHoaDon id="41" maHD="9" maSP="4" soLuong="2" giaBan="1432000" />
+  <ChiTietHoaDon id="42" maHD="10" maSP="3" soLuong="1" giaBan="1350000" />
+  <ChiTietHoaDon id="43" maHD="10" maSP="2" soLuong="4" giaBan="2000000" />
+  <ChiTietHoaDon id="44" maHD="11" maSP="1" soLuong="2" giaBan="1650000" />
+  <ChiTietHoaDon id="45" maHD="11" maSP="8" soLuong="1" giaBan="3150000" />
+</ChiTietHoaDons>

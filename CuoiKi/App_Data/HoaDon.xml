@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<HoaDons>
+  <HoaDon id="1" maKH="8" ngayNhap="2022-01-05T00:00:00" trangThai="1" />
+  <HoaDon id="2" maKH="9" ngayNhap="2022-01-02T00:00:00" trangThai="0" />
+  <HoaDon id="3" maKH="10" ngayNhap="2022-01-01T00:00:00" trangThai="0" />
+  <HoaDon id="4" maKH="10" ngayNhap="2022-01-18T00:00:00" trangThai="1" />
+  <HoaDon id="5" maKH="10" ngayNhap="2022-02-01T00:00:00" trangThai="1" />
+  <HoaDon id="6" maKH="11" ngayNhap="2022-01-09T00:00:00" trangThai="1" />
+  <HoaDon id="7" maKH="12" ngayNhap="2022-09-02T00:00:00" trangThai="1" />
+  <HoaDon id="8" maKH="11" ngayNhap="2022-09-03T00:00:00" trangThai="0" />
+  <HoaDon id="9" maKH="13" ngayNhap="2022-01-09T00:00:00" trangThai="1" />
+  <HoaDon id="10" maKH="14" ngayNhap="2022-01-09T00:00:00" trangThai="1" />
+  <HoaDon id="11" maKH="14" ngayNhap="2022-01-01T00:00:00" trangThai="0" />
+</HoaDons>

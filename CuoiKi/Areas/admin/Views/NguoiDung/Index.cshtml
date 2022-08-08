@@ -1,0 +1,101 @@
+﻿@model IEnumerable<CuoiKi.Areas.admin.Models.NguoiDung>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    <i class="fa fa-home"></i> &nbsp; Quản Lý Tài Khoản
+}
+
+<div class="row">
+    <div class="col-12 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-12 col-lg-9">
+                        <h4 class="card-title">Danh sách tài khoản</h4>
+                    </div>
+                    <div class="col-12 col-lg-3 d-flex justify-content-end">
+                        @Html.ActionLink("Tạo mới", "Create", "NguoiDung", new { @class = "btn btn-outline-info" })
+                    </div>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="card-body">
+                    <div class="form-group position-relative has-icon-left">
+                        <input type="text" id="search-nguoidung" class="form-control" placeholder="Tìm kiếm tài khoản">
+                        <div class="form-control-icon">
+                            <i class="bi bi-search"></i>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="nguoidung-table" class=" table table-lg table-hover-custom">
+                            <thead>
+                                <tr>
+                                    <th class="text-uppercase">
+                                        @Html.DisplayNameFor(model => model.ten)
+                                    </th>
+                                    <th class="text-uppercase">
+                                        @Html.DisplayNameFor(model => model.tenTK)
+                                    </th>
+                                    <th class="text-uppercase">
+                                        @Html.DisplayNameFor(model => model.matKhau)
+                                    </th>
+
+                                    <th class="text-center text-uppercase">
+                                        quyền
+                                    </th>
+                                    <th class="text-center text-uppercase">
+                                        @Html.DisplayNameFor(model => model.trangThai)
+                                    </th>
+                                    <th class="text-center text-uppercase">Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{ var i = 1;}
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>                                            
+                                            <span class="font-bold position-relative stt" data-stt="@i"> @Html.DisplayFor(modelItem => item.ten)</span>                                           
+                                        </td>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.tenTK)
+                                        </td>
+                                        <td class="col-1">
+                                            <span class="password">@Html.DisplayFor(modelItem => item.matKhau)</span>
+                                        </td>
+
+                                        <td class="text-center">
+                                            <span class="quyen">@Html.DisplayFor(modelItem => item.quyen)</span>
+                                            
+                                        </td>
+                                        <td class="text-center">
+                                            @if (item.trangThai)
+                                            {<span class="actived">Hoạt động</span> }
+                                            else
+                                            {
+                                                <span class="locked">Khóa</span>
+                                            }
+                                        </td>
+
+                                        <td class="text-center">
+                                            <a href="@Url.Action("Edit", "NguoiDung", new { @id = item.id })" class="edit-btn custom-btn">
+                                                <i class="bi bi-pencil-fill"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    i++;
+                                }
+                            </tbody>
+                        </table>
+                        <div id="nguoidung-null" class="null-feedback"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

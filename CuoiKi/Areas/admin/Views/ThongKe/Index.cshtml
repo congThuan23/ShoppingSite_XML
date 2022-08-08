@@ -1,0 +1,78 @@
+﻿@model IEnumerable<CuoiKi.Areas.admin.Models.ThongKeSanPhamBanChay>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    <i class="fa fa-home"></i> &nbsp;  Thống Kê Sản Phẩm Bán Chạy
+}
+
+@*<p class="text-center nor-size">Thống kê 30 ngày vừa qua</p>*@
+
+<div class="container custom-tk">
+    <div class="div1" style="grid-area: div1">
+        <div class="ic ic-grey">
+            <i class="bi bi-sticky-fill"></i>
+        </div>
+        <div class="big-text">
+            <h5 class="font-bold big-size m-0">@ViewBag.HDDaDuyet +</h5>
+            <p class="nor-size m-0 d-block">Đơn Hàng Đã Duyệt</p>
+        </div>
+    </div>
+    <div class="div2" style="grid-area: div2">
+        <div class="card-body-custom">
+            <div>
+                <canvas id="PMChart" data-customer1="@ViewBag.num1" data-customer2="@ViewBag.num2" data-customer3="@ViewBag.num3"></canvas>
+            </div>
+            <h5 class="text-center mt-2">Biểu đồ Top 3 khách hàng tiềm năng nhất</h5>
+        </div>
+    </div>
+    
+    <div class="div4" style="grid-area: div4">
+        <div class="ic ic-light-blue">
+            <i class="bi bi-person-plus-fill"></i>
+        </div>
+        <div class="big-text">
+            <h5 class="font-bold big-size m-0">@ViewBag.HDChuaDuyet +</h5>
+            <p class="nor-size m-0 d-block">Đơn Hàng Chưa Duyệt</p>
+        </div>
+    </div>
+    <div class="div5" style="grid-area: div5">
+        <h5>Top 10 sản phẩm bán chạy</h5>
+        <div class="table-responsive">
+            <table id="user-table" class="table table-lg table-hover-custom">
+                <thead>
+                    <tr>
+                        <th class="custom-size">STT</th>
+                        <th class="text-center custom-size">Mã Giày</th>
+                        <th class="text-center custom-size">Tên Giày</th>
+                        <th class="text-center custom-size">Số Lượng Đã Bán</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{ var i = 1;}
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@i</td>
+                            <td class="text-center">
+                                @Html.DisplayFor(modelItem => item.maGiay)
+                            </td>
+                            <td class="text-center">
+                                @Html.DisplayFor(modelItem => item.tenGiay)
+                            </td>
+                            <td class="text-center">
+                                @Html.DisplayFor(modelItem => item.soLuongBan)
+                            </td>
+                        </tr>
+                        i++;
+                    }
+                </tbody>
+            </table>
+            <div id="users-null" class="null-feedback"></div>
+        </div>
+    </div>
+</div>
+

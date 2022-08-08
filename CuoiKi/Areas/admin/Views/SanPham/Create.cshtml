@@ -1,0 +1,78 @@
+﻿@model CuoiKi.Areas.admin.Models.SanPham
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    Thêm Sản Phẩm
+}
+
+<nav class="navbar-light mb-10">
+    <div class="container d-block">
+        <a href="@Url.Action("Index", "SanPham")"><i class="bi bi-chevron-left"></i></a>
+    </div>
+</nav>
+
+
+@using (Html.BeginForm("Create", "SanPham", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="card mt-5">
+        <div class="card-body pt-lg-5">
+            <div class="row">
+                <div class="col-12 col-lg-12">
+                    <div class="card">
+                        <h4 class="card-title mb-md-3">Thông tin chung</h4>
+                        <div class="card-content">
+                            <div class="card-body padding-0">
+                                <div class="form-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            @Html.ValidationSummary(true, "", new { @class = "invalid-feedback d-block" })
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.maDM, htmlAttributes: new { @class = "control-label " })
+                                                @Html.DropDownListFor(model => model.maDM, (IEnumerable<SelectListItem>)ViewBag.danhMuc, "--Chọn loại sản phẩm--", new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.maDM, "", new { @class = "invalid-feedback d-block" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.tenSanPham, htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.tenSanPham, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.tenSanPham, "", new { @class = "invalid-feedback d-block" })
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.soLuong, htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.soLuong, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.soLuong, "", new { @class = "invalid-feedback d-block" })
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.gia, htmlAttributes: new { @class = "control-label" })
+                                                @Html.EditorFor(model => model.gia, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.gia, "", new { @class = "invalid-feedback d-block" })
+                                            </div>
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.anh, htmlAttributes: new { @class = "control-label" })
+                                                <input type="file" name="file" class="form-control" id="file" accept="image/*" />
+                                                @Html.ValidationMessageFor(model => model.anh, "", new { @class = "invalid-feedback d-block" })
+                                            </div>
+                                            <div class="d-flex justify-content-end">
+                                                <button type="submit" class="btn btn-primary">Thêm</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

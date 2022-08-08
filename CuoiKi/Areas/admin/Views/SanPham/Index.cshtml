@@ -1,0 +1,98 @@
+﻿@model IEnumerable<CuoiKi.Areas.admin.Models.SanPham>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    <i class="fa fa-home"></i> &nbsp; Quản Lý Sản Phẩm
+}
+
+
+<div class="row">
+    <div class="col-12 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-12 col-lg-9">
+                        <h4 class="card-title">Danh sách sản phẩm</h4>
+                    </div>
+                    <div class="col-12 col-lg-3 d-flex justify-content-end">
+                        @Html.ActionLink("Tạo mới", "Create", "SanPham", new { @class = "btn btn-outline-info" })
+                    </div>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="card-body">
+                    <div class="form-group position-relative has-icon-left">
+                        <input type="text" id="search-sanpham" class="form-control" placeholder="Tìm kiếm sản phẩm">
+                        <div class="form-control-icon">
+                            <i class="bi bi-search"></i>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="sanpham-table" class=" table table-lg table-hover-custom">
+                            <thead>
+                                <tr>
+                                    <th class="text-uppercase">
+                                        sản phẩm
+                                    </th>
+                                    <th class="text-center text-uppercase">
+                                       loại
+                                    </th>
+                                    <th class="text-center text-uppercase">
+                                        @Html.DisplayNameFor(model => model.soLuong)
+                                    </th>
+                                    <th class="text-center text-uppercase">
+                                        @Html.DisplayNameFor(model => model.gia)
+                                    </th>
+                                    <th class="text-center text-uppercase">Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{ var i = 1;}
+                                @foreach (var item in Model)
+                                {
+                                <tr id="sp_@item.id">
+                                    <td>
+                                        <div class="d-flex align-items-center position-relative stt" data-stt="@i">
+                                            <div>
+                                                @{ var hinh = Html.DisplayFor(modelItem => item.anh); }
+                                                <img class="custom-img" src="~/uploadedImages/@hinh" />
+                                            </div>
+                                            <p class="font-bold ms-3 mb-0">@Html.DisplayFor(modelItem => item.tenSanPham)</p>
+                                        </div>
+                                       
+                                    </td>
+                                    <td class="text-center">
+                                        @Html.DisplayFor(modelItem => item.tenDanhMuc)
+                                    </td>
+                                    <td class="text-center">
+                                        @Html.DisplayFor(modelItem => item.soLuong)
+                                    </td>
+                                    <td class="text-center">
+                                        @String.Format("{0:0,0 ₫}", (item.gia))
+                                    </td>
+                                    <td class="text-end">
+                                        <div class="d-flex justify-content-center">
+                                            <a href="@Url.Action("Edit", "SanPham", new { @id = item.id })" class="edit-btn custom-btn">
+                                                <i class="bi bi-pencil-fill"></i>
+                                            </a>
+                                            <button class="remove-btn custom-btn" onclick="removeRow(@item.id,'/Admin/SanPham/Delete', 'sp_@item.id')">
+                                                <i class="bx bx-x"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                    i++;
+                                }
+                            </tbody>
+                        </table>
+                        <div id="sanpham-null" class="null-feedback"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

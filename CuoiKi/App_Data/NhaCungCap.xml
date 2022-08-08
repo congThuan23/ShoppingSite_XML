@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<NhaCungCaps>
+  <NhaCungCap id="1" tenNhaCungCap="Nha Cung Cap A" SDT="111111111" diaChi="Quang Nam" email="ncca@gmail.com" />
+  <NhaCungCap id="2" tenNhaCungCap="b" SDT="1111" diaChi="b" email="a" />
+  <NhaCungCap id="3" tenNhaCungCap="c" SDT="1111" diaChi="c" email="nhuyhe62001@gmail.com" />
+  <NhaCungCap id="4" tenNhaCungCap="d" SDT="1111" diaChi="d" email="nhuyhe62001@gmail.com" />
+  <NhaCungCap id="5" tenNhaCungCap="" SDT="" diaChi="" email="" />
+</NhaCungCaps>

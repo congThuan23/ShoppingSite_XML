@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<SanPhams>
+  <SanPham id="1" tenSanPham="Adidas Stan Smith" maDM="7" gia="1000000" soLuong="23" tinhTrang="1" hinhAnh="adidas-stan-smith.jpg" />
+  <SanPham id="2" tenSanPham="Adidas Superstar – 1969" maDM="2" gia="1650000" soLuong="54" tinhTrang="1" hinhAnh="adidas-super-star.jpg" />
+  <SanPham id="3" tenSanPham="Nike Air Force 1 – 1982" maDM="3" gia="2000000" soLuong="12" tinhTrang="1" hinhAnh="air-force-1-shadow-shoes-mN8Glx.jpg" />
+  <SanPham id="4" tenSanPham="Air Jordan 1 – 1985" maDM="8" gia="1350000" soLuong="67" tinhTrang="1" hinhAnh="air-jordan-1-mid-se-older-shoes-CtB8N5.jpg" />
+  <SanPham id="5" tenSanPham="Puma Suede Classic" maDM="1" gia="1432000" soLuong="21" tinhTrang="1" hinhAnh="puma.jpg" />
+  <SanPham id="6" tenSanPham="Chuck Taylor All-Stars – 1917" maDM="3" gia="3410000" soLuong="12" tinhTrang="1" hinhAnh="chuck.jpg" />
+  <SanPham id="7" tenSanPham="NikeCourt Royale 2 Next Nature" maDM="3" gia="1690000" soLuong="20" tinhTrang="1" hinhAnh="nikecourt-royale-2-next-nature-shoes-RRcr20.jpg" />
+  <SanPham id="8" tenSanPham="Nike Zoom Span 4" maDM="1" gia="2499000" soLuong="15" tinhTrang="1" hinhAnh="zoom-span-4-road-running-shoes-XNCTk5.jpg" />
+  <SanPham id="9" tenSanPham="Nike LeBron 9" maDM="2" gia="3150000" soLuong="21" tinhTrang="1" hinhAnh="lebron-9-shoes-j6jK09.jpg" />
+</SanPhams>

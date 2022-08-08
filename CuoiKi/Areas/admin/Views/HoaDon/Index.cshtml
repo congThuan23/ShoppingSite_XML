@@ -1,0 +1,83 @@
+﻿@model IEnumerable<CuoiKi.Areas.admin.Models.HoaDon>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    <i class="fa fa-home"></i> &nbsp; Quản Lý Đơn Hàng
+}
+
+
+<div class="row">
+    <div class="col-12 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-12 col-lg-9">
+                        <h4 class="card-title">Danh sách đơn hàng</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class=" table table-lg table-hover-custom">
+                            <thead>
+                                <tr>
+                                    <th class="text-uppercase text-center">
+                                        @Html.DisplayNameFor(model => model.id)
+                                    </th>
+                                    <th class="text-uppercase text-center">
+                                        @Html.DisplayNameFor(model => model.maKH)
+                                    </th>
+                                    <th class="text-uppercase text-center">
+                                        @Html.DisplayNameFor(model => model.tenKH)
+                                    </th>
+                                    <th class="text-uppercase text-center">
+                                        @Html.DisplayNameFor(model => model.ngayNhap)
+                                    </th>
+                                    <th class="text-center text-center">
+                                        @Html.DisplayNameFor(model => model.trangThai)
+                                    </th>
+                                    <th class="text-center text-uppercase">Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr class="text-center">
+                                        <td class="text-center">
+                                            @Html.DisplayFor(modelItem => item.id)
+                                        </td>
+                                        <td class="text-center">
+                                            @Html.DisplayFor(modelItem => item.maKH)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.tenKH)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.ngayNhap)
+                                        </td>
+                                        <td>
+                                            @if (item.trangThai == 1)
+                                            {<text><p class="btn btn-light">Đã duyệt</p></text>}
+                                        else
+                                        {
+                                            @Html.ActionLink("Chưa duyệt", "Duyet", "HoaDon", new { @id = item.id }, new { @class = "btn btn-primary" })
+                                        }
+                                        </td>
+                                        <td class="text-center">
+                                            @Html.ActionLink("Chi tiết", "Details", new { id = item.id }, new { @class="quyen" })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

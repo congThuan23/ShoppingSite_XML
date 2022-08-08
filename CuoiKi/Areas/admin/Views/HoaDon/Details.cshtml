@@ -1,0 +1,82 @@
+﻿@model IEnumerable<CuoiKi.Areas.admin.Models.ChiTietHoaDon>
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    Chi Tiết Hóa Đơn
+}
+
+<nav class="navbar-light mb-10">
+    <div class="container d-block">
+        <a href="@Url.Action("Index", "HoaDon")"><i class="bi bi-chevron-left"></i></a>
+    </div>
+</nav>
+
+
+<div class="row">
+    <div class="col-12 col-lg-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-12 col-lg-9">
+                        <h4 class="card-title">Danh sách đơn hàng</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="card-content">
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class=" table table-lg table-hover-custom">
+                            <thead>
+                                <tr>
+                                    <th class="text-uppercase text-center">
+                                        @Html.DisplayNameFor(model => model.maHD)
+                                    </th>
+
+                                    <th class="text-uppercase">
+                                        @Html.DisplayNameFor(model => model.tenSP)
+                                    </th>
+                                    <th class="text-uppercase text-center">
+                                        @Html.DisplayNameFor(model => model.soLuong)
+                                    </th>
+                                    <th class="text-uppercase">
+                                        @Html.DisplayNameFor(model => model.giaBan)
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{ var i = 1;
+                                    var tong = 0;}
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td class="text-center">
+                                            @Html.DisplayFor(modelItem => item.maHD)
+                                        </td>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.tenSP)
+                                        </td>
+                                        <td class="text-center">
+                                            @Html.DisplayFor(modelItem => item.soLuong)
+                                        </td>
+                                        <td>
+                                            @String.Format("{0:0,0 ₫}", item.giaBan)
+                                        </td>
+
+                                    </tr>
+                                    tong = tong + item.thanhTien;
+                                }
+                            </tbody>
+                        </table>
+
+                        <p>Tổng tiền: <strong>@String.Format("{0:0,0 ₫}", @tong)</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

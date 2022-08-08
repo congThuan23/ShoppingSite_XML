@@ -1,0 +1,48 @@
+﻿@model CuoiKi.Areas.admin.Models.DanhMuc
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+<nav class="navbar-light mb-10">
+    <div class="container d-block">
+        <a href="@Url.Action("Index", "DanhMuc")"><i class="bi bi-chevron-left"></i></a>
+    </div>
+</nav>
+
+@section header{
+    Tạo Mới Danh Mục Sản Phẩm
+}
+
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-body pt-lg-5">
+            <div class="card-content">
+                <div class="card-body padding-0">
+                    @using (Html.BeginForm("Create", "DanhMuc", FormMethod.Post, new { @class = "form form-vertical" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                    <div class="form-body">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.tenDanhMuc)
+                                    @Html.TextBoxFor(model => model.tenDanhMuc, new { @class = "form-control", @placeholder = "Tên danh mục mới" })
+                                    @Html.ValidationMessageFor(model => model.tenDanhMuc, "", new { @class = "invalid-feedback d-block" })
+                                </div>
+
+                            </div>
+                            <div class="col-12 d-flex justify-content-end">
+                                <button type="submit" class="btn btn-primary me-1 mb-1">Thêm</button>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,112 @@
+﻿@model CuoiKi.Areas.admin.Models.NguoiDung
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    Thêm Tài Khoản
+}
+
+
+<nav class="navbar-light mb-10">
+    <div class="container d-block">
+        <a href="@Url.Action("Index", "NguoiDung")"><i class="bi bi-chevron-left"></i></a>
+    </div>
+</nav>
+
+
+@using (Html.BeginForm("Create", "NguoiDung", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="card mt-5">
+        <div class="card-body pt-lg-5">
+            <div class="row">
+                <div class="col-12 col-lg-12">
+                    <div class="card">
+                        <h4 class="card-title mb-md-3">Thông tin chung</h4>
+                        <div class="card-content">
+                            <div class="card-body padding-0">
+                                <div class="form-body">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            @Html.ValidationSummary(true, "", new { @class = "invalid-feedback d-block" })
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.tenTK, htmlAttributes: new { @class = "control-label col-md-2" })
+                                                @Html.EditorFor(model => model.tenTK, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.tenTK, "", new { @class = "invalid-feedback d-block" })
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.matKhau, htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.matKhau, new { htmlAttributes = new { @class = "form-control", @type = "password" } })
+                                                @Html.ValidationMessageFor(model => model.matKhau, "", new { @class = "invalid-feedback d-block" })
+
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.ten, htmlAttributes: new { @class = "control-label " })
+                                                @Html.EditorFor(model => model.ten, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.ten, "", new { @class = "invalid-feedback d-block" })
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.diaChi, htmlAttributes: new { @class = "control-label" })
+                                                @Html.EditorFor(model => model.diaChi, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.diaChi, "", new { @class = "invalid-feedback d-block" })
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.sdt, htmlAttributes: new { @class = "control-label" })
+                                                @Html.EditorFor(model => model.sdt, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.sdt, "", new { @class = "invalid-feedback d-block" })
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label" })
+                                                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.email, "", new { @class = "invalid-feedback d-block" })
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.gioiTinh, htmlAttributes: new { @class = "control-label" })
+                                                <select name="gioiTinh" class="form-control">
+                                                    <option>Chọn giới tính</option>
+                                                    <option value="1" >
+                                                        Nữ
+                                                    </option>
+                                                    <option value="0" >Nam</option>
+
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.cmnd, htmlAttributes: new { @class = "control-label" })
+                                                @Html.EditorFor(model => model.cmnd, new { htmlAttributes = new { @class = "form-control" } })
+                                                @Html.ValidationMessageFor(model => model.cmnd, "", new { @class = "invalid-feedback d-block" })
+                                            </div>
+
+                                            <div class="form-group">
+                                                @Html.LabelFor(model => model.maQuyen, htmlAttributes: new { @class = "control-label" })
+                                                @Html.DropDownListFor(model => model.maQuyen, (IEnumerable<SelectListItem>)ViewBag.quyen, "---chọn quyền---", new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.maQuyen, "", new { @class = "invalid-feedback d-block" })
+                                            </div>
+                                            <div class="d-flex justify-content-end">
+                                                <button type="submit" class="btn btn-primary">Thêm</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

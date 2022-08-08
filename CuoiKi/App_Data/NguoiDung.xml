@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<NguoiDungs>
+  <NguoiDung id="8" ten="Thị Như Y" diaChi="Quảng Nam" SDT="0998987651" gioiTinh="1" email="nhuyhe62001@gmail.com" CMND="111111" tenTaiKhoan="admin" matKhau="33421da058b740a997cf427102e59e5c" maQuyen="1" trangThai="1" />
+  <NguoiDung id="9" ten="Thị Như Y" diaChi="Quảng Nam" SDT="0998987651" gioiTinh="1" email="nhuyhe62001@gmail.com" CMND="111111" tenTaiKhoan="nhanvien" matKhau="4297f44b13955235245b2497399d7a93" maQuyen="2" trangThai="1" />
+  <NguoiDung id="10" ten="Thị Như Y" diaChi="Quảng Nam" SDT="0998987651" gioiTinh="1" email="nhuyhe62001@gmail.com" CMND="111111" tenTaiKhoan="nhuy" matKhau="4297f44b13955235245b2497399d7a93" maQuyen="3" trangThai="1" />
+  <NguoiDung id="11" ten="Thuận Nguyễn" diaChi="Quảng Nam" SDT="0998987651" gioiTinh="0" email="thuan@gmail.com" CMND="111111" tenTaiKhoan="thuan" matKhau="4297f44b13955235245b2497399d7a93" maQuyen="3" trangThai="1" />
+  <NguoiDung id="12" ten="Thiện Đặng" diaChi="Huế" SDT="0998987651" gioiTinh="0" email="thien@gmail.com" CMND="111111" tenTaiKhoan="thien" matKhau="4297f44b13955235245b2497399d7a93" maQuyen="3" trangThai="1" />
+  <NguoiDung id="13" ten="Huy Nguyễn" diaChi="Bình Định" SDT="0998987651" gioiTinh="0" email="huy@gmail.com" CMND="111111" tenTaiKhoan="huy" matKhau="4297f44b13955235245b2497399d7a93" maQuyen="3" trangThai="1" />
+  <NguoiDung id="14" ten="Lài Trần" diaChi="Đà Nẵng" SDT="0998987651" gioiTinh="1" email="lai@gmail.com" CMND="111111" tenTaiKhoan="lai" matKhau="4297f44b13955235245b2497399d7a93" maQuyen="3" trangThai="1" />
+</NguoiDungs>

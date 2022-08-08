@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<DanhMucs>
+  <DanhMuc id="1" tenDanhMuc="Giày tối giản" trangThai="1" />
+  <DanhMuc id="2" tenDanhMuc="Giày đi bộ" trangThai="1" />
+  <DanhMuc id="3" tenDanhMuc="Quần tây" trangThai="1" />
+  <DanhMuc id="4" tenDanhMuc="Giày tennis" trangThai="1" />
+  <DanhMuc id="7" tenDanhMuc="Giày sneaker" trangThai="1" />
+  <DanhMuc id="8" tenDanhMuc="Giày bóng đá" trangThai="1" />
+  <DanhMuc id="9" tenDanhMuc="Giày bóng rổ" trangThai="1" />
+</DanhMucs>

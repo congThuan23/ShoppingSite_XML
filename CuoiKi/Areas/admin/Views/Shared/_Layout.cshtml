@@ -1,0 +1,153 @@
+﻿@using CuoiKi.Areas.admin.Models
+@using CuoiKi.Common
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="ThemeBucket">
+    <link rel="shortcut icon" href="~/Assets/admin/images/favicon.png">
+    <title>@ViewBag.Title - Quản trị</title>
+    <link rel="shortcut icon" href="~/Assets/mazer/assets/images/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/Assets/mazer/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="~/Assets/mazer/assets/css/custom.css">
+    <link rel="stylesheet" href="~/Assets/mazer/assets/vendors/iconly/bold.css">
+    <link rel="stylesheet" href="~/Assets/mazer/assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="~/Assets/mazer/assets/vendors/bootstrap-icons/bootstrap-icons.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="~/Assets/mazer/assets/css/app.css">
+    <link href="~/Assets/mazer/dist/filepond.css" rel="stylesheet" />
+    <link href="https://unpkg.com/filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css"
+          rel="stylesheet" />
+</head>
+
+<body style="overflow-y: auto;">
+    <div id="app">
+        <div id="sidebar" class="active">
+            <div class="sidebar-wrapper active ps ps--active-y">
+                <div class="sidebar-header">
+                    <div class="d-flex justify-content-between">
+                        <div class="logo">
+                            <a href="index.html"><img src="~/Assets/mazer/assets/images/logo/logo.png" alt="Logo" srcset=""></a>
+                        </div>
+                        <div class="toggler">
+                            <a href="#" class="sidebar-hide d-xl-none d-block"><i class="bi bi-x bi-middle"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-menu">
+                    <ul class="menu">
+                        <li class="sidebar-title">Menu</li>
+                        <li class="sidebar-item">
+                            <a href="~/Admin/NguoiDung/Index" class="sidebar-link">
+                                <i class="bi bi-people"></i>
+                                <span>Quản lý người dùng</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="~/Admin/DanhMuc/Index" class="sidebar-link">
+                                <i class="bi bi-grid"></i>
+                                <span>Quản lý loại sản phẩm</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="~/Admin/SanPham/Index" class="sidebar-link">
+                                <i class="fas fa-shoe-prints"></i>
+                                <span>Quản lý sản phẩm</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="~/Admin/HoaDon/Index" class="sidebar-link">
+                                <i class="bi bi-people"></i>
+                                <span>Quản lý đơn hàng</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="~/Admin/ThongKe/Index" class="sidebar-link">
+                                <i class="far fa-chart-bar"></i>
+                                <span>Thống kê</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+                <div class="ps__rail-x" style="left: 0px; bottom: 0px;">
+                    <div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+                </div>
+                <div class="ps__rail-y" style="top: 0px; height: 657px; right: 0px;">
+                    <div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 261px;"></div>
+                </div>
+            </div>
+        </div>
+        <div id="main">
+            <div class="page-content">
+                <header class="mb-3">
+                    <a href="#" class="burger-btn d-block d-xl-none">
+                        <i class="bi bi-justify fs-3"></i>
+                    </a>
+                </header>
+
+                <div class="page-heading">
+                    <h3>@RenderSection("header", required: true)</h3>
+                </div>
+
+                <div class="page-content">
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="~/Assets/mazer/assets/vendors/jquery/jquery.min.js"></script>
+    <script src="~/Assets/mazer/assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="~/Assets/mazer/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="~/Assets/mazer/assets/js/mazer.js"></script>
+    <script src="~/Assets/mazer/assets/js/ajax_app.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.js"></script>
+    <script src="~/Assets/mazer/dist/filepond.js"></script>
+
+    <script>
+        const chartPm = document.getElementById('PMChart');
+        const data = {
+            labels: [
+                '@ViewBag.name1',
+                '@ViewBag.name2',
+                '@ViewBag.name3',
+            ],
+            datasets: [{
+                label: 'Biểu đồ Top 2 Khách Hàng Tiềm Năng',
+                data: [chartPm.dataset.customer1, chartPm.dataset.customer2, chartPm.dataset.customer3],
+                backgroundColor: [
+                    '#553bfc',
+                    '#02c3f9',
+                    '#03bd74'
+                ],
+                hoverOffset: 4
+            }]
+        }
+
+        const config = {
+            type: 'doughnut',
+            data: data,
+        };
+
+        const PMChar = new Chart(
+            chartPm,
+            config
+        );
+    </script>
+
+    @RenderSection("jsFooter", required: false)
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿@model CuoiKi.Areas.admin.Models.DanhMuc
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    Chỉnh Sửa Danh Mục Sản Phẩm
+}
+
+<nav class="navbar-light mb-10">
+    <div class="container d-block">
+        <a href="@Url.Action("Index", "DanhMuc")"><i class="bi bi-chevron-left"></i></a>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="card mt-5">
+        <div class="card-body pt-lg-5">
+            <div class="card-content">
+                <div class="card-body padding-0">
+                    @using (Html.BeginForm("Edit", "DanhMuc", FormMethod.Post, new { @class = "form form-vertical" }))
+                    {
+                        @Html.AntiForgeryToken()
+
+                    <div class="form-body">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        @Html.HiddenFor(model => model.id)
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.tenDanhMuc)
+                                    @Html.EditorFor(model => model.tenDanhMuc, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.tenDanhMuc, "", new { @class = "invalid-feedback d-block" })
+                                </div>
+
+                            </div>
+                            <div class="col-12 d-flex justify-content-end">
+                                <button type="submit" class="btn btn-primary me-1 mb-1">Lưu</button>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
